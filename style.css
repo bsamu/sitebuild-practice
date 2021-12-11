@@ -133,6 +133,8 @@ button {
   align-items: center;
 
   width: auto;
+
+  margin-top: 10px;
 }
 
 .terms input {
