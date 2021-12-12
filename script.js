@@ -23,7 +23,11 @@ const inputElementCb = (type, id, label, span) => {
     `
 }
 
-
+const formSubmit = (event) => {
+    event.preventDefault();
+    const eventTarget = event.target;
+    eventTarget.classList.add("submitted");
+}
 
 const signUpForm = `
     <form id="form">
@@ -38,6 +42,9 @@ const signUpForm = `
 function loadEvent() {
     const root = document.querySelector("#root");
     root.insertAdjacentHTML("beforeend", signUpForm)
+
+    const form = document.getElementById("form");
+    form.addEventListener("submit", formSubmit);
 }
 
 window.addEventListener("load", loadEvent);
